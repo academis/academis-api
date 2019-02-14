@@ -3,7 +3,17 @@ target/
 
 # IntelliJ IDEA
 .idea/
+*.iws
 *.iml
+*.ipr
+
+# NetBeans IDE
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build/
 
 # Compiled class file
 *.class
