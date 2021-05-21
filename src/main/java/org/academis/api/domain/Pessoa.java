@@ -1,9 +1,11 @@
 package org.academis.api.domain;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "pessoa")
 public class Pessoa {
 
     @Id
@@ -13,17 +15,24 @@ public class Pessoa {
     @Version
     private Long version;
 
+    @NotBlank
+    @Min(value = 3)
     @Column(name = "nome_civil")
     private String nomeCivil;
 
+    @Min(value = 3)
     @Column(name = "nome_social")
     private String nomeSocial;
 
+    @NotNull
     private Genero genero;
 
+    @NotNull
+    @Past
     @Column(name = "data_nascimento")
     private LocalDate dataNascimento;
 
+    @PastOrPresent
     @Column(name = "data_obito")
     private LocalDate dataObito;
 
