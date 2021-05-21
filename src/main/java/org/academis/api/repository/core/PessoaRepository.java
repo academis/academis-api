@@ -1,6 +1,6 @@
-package org.academis.api.repository;
+package org.academis.api.repository.core;
 
-import org.academis.api.domain.Pessoa;
+import org.academis.api.domain.core.Pessoa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

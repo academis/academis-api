@@ -1,4 +1,4 @@
-package org.academis.api.domain;
+package org.academis.api.domain.core;
 
 public enum Genero {
 

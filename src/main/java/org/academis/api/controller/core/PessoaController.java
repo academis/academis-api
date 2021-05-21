@@ -1,7 +1,7 @@
-package org.academis.api.controller;
+package org.academis.api.controller.core;
 
-import org.academis.api.domain.Pessoa;
-import org.academis.api.repository.PessoaRepository;
+import org.academis.api.domain.core.Pessoa;
+import org.academis.api.repository.core.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
