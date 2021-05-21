@@ -5,9 +5,11 @@ import org.academis.api.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 
+@RestController
 @RequestMapping(value = "pessoa")
 public class PessoaController {
 
@@ -18,4 +20,6 @@ public class PessoaController {
     public Collection<Pessoa> get() {
         return pessoaRepository.findAll();
     }
+
+
 }
