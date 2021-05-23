@@ -14,7 +14,8 @@ ON pessoa (nome_civil);
 CREATE TABLE IF NOT EXISTS campus (
     id BIGINT PRIMARY KEY,
     version BIGINT NOT NULL DEFAULT 0,
-    nome VARCHAR(255) NOT NULL
+    nome VARCHAR(255) NOT NULL,
+    CONSTRAINT campus_nome_uk UNIQUE (sigla)
 );
 
 CREATE TABLE IF NOT EXISTS unidade_organizacional (
@@ -24,7 +25,8 @@ CREATE TABLE IF NOT EXISTS unidade_organizacional (
     sigla CHAR(20) NOT NULL,
     campus_id BIGINT NOT NULL,
     CONSTRAINT campus_id_fk FOREIGN KEY (campus_id)
-    REFERENCES campus(id)
+    REFERENCES campus(id),
+    CONSTRAINT unidade_organizacional_sigla_uk UNIQUE (sigla)
 );
 
 CREATE TABLE IF NOT EXISTS curso (
@@ -36,5 +38,6 @@ CREATE TABLE IF NOT EXISTS curso (
     codigo_enade CHAR(8) NOT NULL,
     unidade_organizacional_id BIGINT NOT NULL,
     CONSTRAINT unidade_organizacional_id_fk FOREIGN KEY (unidade_organizacional_id)
-    REFERENCES unidade_organizacional(id)
+    REFERENCES unidade_organizacional(id),
+    CONSTRAINT curso_sigla_uk UNIQUE (sigla)
 );
