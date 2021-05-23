@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS pessoa (
     data_obito DATE
 );
 
+CREATE INDEX IF NOT EXISTS pessoa_nome_civil_idx
+ON pessoa (nome_civil);
+
 CREATE TABLE IF NOT EXISTS campus (
     id BIGINT PRIMARY KEY,
     version BIGINT NOT NULL DEFAULT 0,
