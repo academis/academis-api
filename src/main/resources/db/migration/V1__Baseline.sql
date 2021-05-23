@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS campus (
     id BIGINT PRIMARY KEY,
     version BIGINT NOT NULL DEFAULT 0,
     nome VARCHAR(255) NOT NULL,
-    CONSTRAINT campus_nome_uk UNIQUE (sigla)
+    CONSTRAINT campus_nome_uk UNIQUE (nome)
 );
 
 CREATE TABLE IF NOT EXISTS unidade_organizacional (
@@ -40,4 +40,20 @@ CREATE TABLE IF NOT EXISTS curso (
     CONSTRAINT unidade_organizacional_id_fk FOREIGN KEY (unidade_organizacional_id)
     REFERENCES unidade_organizacional(id),
     CONSTRAINT curso_sigla_uk UNIQUE (sigla)
+);
+
+CREATE TABLE IF NOT EXISTS matriz_curricular (
+    id BIGINT PRIMARY KEY,
+    version BIGINT NOT NULL DEFAULT 0,
+    nome VARCHAR(255) NOT NULL,
+    decreto VARCHAR(255),
+    turno CHAR(28) NOT NULL,
+    grau_academico CHAR(12) NOT NULL,
+    emissao VARCHAR(255),
+    titulo_feminino VARCHAR(255),
+    titulo_masculino VARCHAR(255),
+    curso_id BIGINT NOT NULL,
+    CONSTRAINT curso_id_fk FOREIGN KEY (curso_id)
+    REFERENCES curso(id),
+    CONSTRAINT matriz_curricular_nome_curso_uk UNIQUE (nome, curso_id)
 );
