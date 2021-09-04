@@ -1,5 +1,7 @@
 package org.academis.api.domain.core;
 
+import org.apache.commons.lang3.StringUtils;
+
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
@@ -66,6 +68,10 @@ public class Pessoa {
 
     public void setNomeSocial(String nomeSocial) {
         this.nomeSocial = nomeSocial;
+    }
+
+    public String getNomeExibicao() {
+        return StringUtils.firstNonBlank(getNomeSocial(), getNomeCivil());
     }
 
     public Genero getGenero() {
