@@ -34,7 +34,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          check-latest: true
       - name: Unit Test
         run: mvn -B test
 
@@ -62,7 +61,6 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-          check-latest: true
       - name: Exibir env
         run: echo $POSTGRES_HOST
       - name: Migrate Database
