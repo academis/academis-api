@@ -60,6 +60,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           check-latest: true
-      run: echo $POSTGRES_HOST
+      - name: Exibir env
+        run: echo $POSTGRES_HOST
       - name: Migrate Database
         run: mvn -B -Dflyway.configFiles=flyway-ci.properties flyway:migrate
