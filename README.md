@@ -1,3 +1,5 @@
+[![pipeline](https://github.com/academis/academis-api/actions/workflows/actions.yml/badge.svg)](https://github.com/academis/academis-api/actions/workflows/actions.yml)
+Ad
 # academis-api
 
 Projeto de _software_ incipiente para instituições de ensino superior (univesidades, institutos, faculdades, entre outras) do Brasil.
